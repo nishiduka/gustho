@@ -10,7 +10,6 @@ import dev.nishiduka.gustho.requests.ProductPostRequestBody;
 public abstract class ProductMapper {
     public static final ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    
     public abstract Product toProduct(ProductPostRequestBody productPosRequestBody);
 
 }

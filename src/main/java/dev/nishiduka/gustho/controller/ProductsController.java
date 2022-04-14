@@ -32,4 +32,10 @@ public class ProductsController {
 	public ResponseEntity<Product> newProduct(@RequestBody ProductPostRequestBody productPostRequestBody) {
 		return new ResponseEntity<>(productsService.save(productPostRequestBody), HttpStatus.CREATED);
 	}
+	
+	@DeleteMapping(path = "/{id}")
+	public ResponseEntity<Void> removeProduct(@PathVariable Integer id) {
+		productsService.delete(id);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
 }
